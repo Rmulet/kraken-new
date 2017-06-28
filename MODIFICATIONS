@@ -1,0 +1,5 @@
+Kraken is no longer able to download automatically the files from the NCBI database because they rearranged the structure of all the RefSeq genomes. Two possible solutions are described here:
+a) Change the paths in the script download_genomic_library.sh – for instance, for bacteria (line 43) we use  $FTP_SERVER/genomes/archive/old_refseq/Bacteria/all.fna.tar.gz [ref]
+b) Create our own databases. To make it easier, we can use the scripts here [ref]. The magic in these scripts is that they also account for the suppression of the GI number that the NCBI has also adopted [ref].
+c) Use the script UpdateDatabasesKraken.py created by Sej Modha, which is now in the /tools/kraken folder.
+In addition, we had to install jellyfish v1.1 (Kraken does not support v2) from the website where it is originally stored http://www.cbcb.umd.edu/software/jellyfish/
